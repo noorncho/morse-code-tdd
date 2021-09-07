@@ -68,13 +68,13 @@ export const validInput = (userInput) =>{
     }
 }
 
-/*export const morseOrEnglish = (userInput) =>{
+export const morseOrEnglish = (userInput) =>{
     if(isMorse){
         translateMorseToEnglish(userInput);
     }else{
         translateEnglishToMorse(userInput);
     }
-}*/
+}
 
 export const translateMorseToEnglish = (morseCode) =>{
     let englishTranslation = "";
@@ -96,8 +96,23 @@ export const translateMorseToEnglish = (morseCode) =>{
     return englishTranslation;
 }
 
-export const translateEnglishToMorse = () =>{
+export const translateEnglishToMorse = (englishInput) =>{
+    let morseTranslation = "";
 
-    return "This feature is currently unavailable, be come back later";
+    if(validInput(englishInput)){
+        const englishArr = englishInput.split("");
+
+        for(const letter of englishArr){
+            morseTranslation += " ";
+            if(letter == " "){
+                morseTranslation += "/"
+            }
+            const morseLetter = morseCodeLetters[letter];
+            morseTranslation += morseLetter;
+        }
+    }else{
+        return "Unable to translate."
+    }
+    return morseTranslation;
 }
 

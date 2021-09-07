@@ -26,7 +26,7 @@ xdescribe("User has entered a valid input", () =>{
     })
 });
 
-describe("Translate from Morse Code to English", () => {
+xdescribe("Translate from Morse Code to English", () => {
     test("Translate single word Morse Code inputs to English", () => {
         expect(translator.translateMorseToEnglish(".-")).toBe("a");
         expect(translator.translateMorseToEnglish(sosMorse)).toBe("sos");
@@ -37,3 +37,9 @@ describe("Translate from Morse Code to English", () => {
         expect(translator.translateMorseToEnglish(helloWorldMorse)).toBe("hello world");
     });
 });
+
+describe("Translate from English to Morse Code", () => {
+    test("Translate single word English to Morse Code", () => {
+        expect(translator.translateEnglishToMorse("sos")).toBe(sosMorse);
+    })
+})
