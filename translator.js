@@ -77,6 +77,7 @@ export const translateMorseToEnglish = (morseCode) =>{
         for(const morse of morseCodeArr){
             if(morse == "/"){
                 englishTranslation += " ";
+                continue;
             }
             const englishLetter = Object.keys(morseCodeLetters).find(key => morseCodeLetters[key] === morse);
             englishTranslation += englishLetter;
@@ -92,12 +93,12 @@ export const translateEnglishToMorse = (englishInput) =>{
     let morseTranslation = "";
 
     if(validInput(englishInput)){
-        const englishArr = englishInput.split("");
-
+        const englishArr = englishInput.toLowerCase().split("");
         for(const letter of englishArr){
             morseTranslation += " ";
             if(letter == " "){
-                morseTranslation += "/"
+                morseTranslation += "/";
+                continue;
             }
             const morseLetter = morseCodeLetters[letter];
             morseTranslation += morseLetter;
