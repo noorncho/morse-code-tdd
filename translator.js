@@ -68,20 +68,12 @@ export const validInput = (userInput) =>{
     }
 }
 
-export const morseOrEnglish = (userInput) =>{
-    if(isMorse){
-        translateMorseToEnglish(userInput);
-    }else{
-        translateEnglishToMorse(userInput);
-    }
-}
-
 export const translateMorseToEnglish = (morseCode) =>{
     let englishTranslation = "";
-
+    
     if(validInput(morseCode)){
         const morseCodeArr = morseCode.split(" ");
-
+        
         for(const morse of morseCodeArr){
             if(morse == "/"){
                 englishTranslation += " ";
@@ -89,7 +81,7 @@ export const translateMorseToEnglish = (morseCode) =>{
             const englishLetter = Object.keys(morseCodeLetters).find(key => morseCodeLetters[key] === morse);
             englishTranslation += englishLetter;
         }
-
+        
     }else{
         return "Invalid Input unable to translate";
     }
@@ -113,6 +105,16 @@ export const translateEnglishToMorse = (englishInput) =>{
     }else{
         return "Unable to translate."
     }
-    return morseTranslation;
+    return morseTranslation.substring(1);
 }
 
+export const morseOrEnglish = (userInput) =>{
+    
+    if(validInput(userInput)  && isMorse){
+        return translateMorseToEnglish(userInput);
+    }
+    if(validInput(userInput)  && !isMorse){
+        return translateEnglishToMorse(userInput);
+    }
+    return "Unable to Translate"
+}

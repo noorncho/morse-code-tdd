@@ -1,7 +1,7 @@
 /**
  * Test file
  */
-import * as translator from "./translator";
+import * as translator from "./translator.js";
 
 const sosMorse = "... --- ...";
 const nameMorse = "-. --- --- .-.";
