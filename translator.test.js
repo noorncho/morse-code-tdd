@@ -7,7 +7,7 @@ const sosMorse = "... --- ...";
 const nameMorse = "-. --- --- .-.";
 const helloWorldMorse = ".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
 
-xdescribe("User has entered a valid input", () =>{
+describe("User has entered a valid input", () =>{
     
     const str4 = "... --- ... / ... --- ..."
     const str2 = "@Noor&Jack*";
@@ -26,7 +26,7 @@ xdescribe("User has entered a valid input", () =>{
     })
 });
 
-xdescribe("Translate from Morse Code to English", () => {
+describe("Translate from Morse Code to English", () => {
     test("Translate single word Morse Code inputs to English", () => {
         expect(translator.translateMorseToEnglish(".-")).toBe("a");
         expect(translator.translateMorseToEnglish(sosMorse)).toBe("sos");
@@ -39,7 +39,12 @@ xdescribe("Translate from Morse Code to English", () => {
 });
 
 describe("Translate from English to Morse Code", () => {
-    test("Translate single word English to Morse Code", () => {
+    test("Translate single word English input to Morse Code", () => {
         expect(translator.translateEnglishToMorse("sos")).toBe(sosMorse);
-    })
+        expect(translator.translateEnglishToMorse("noor")).toBe(nameMorse);
+    });
+
+    test("Translate phrase in English to Morse Code", () => {
+        expect(translator.translateEnglishToMorse("hello world")).toBe(helloWorldMorse);
+    });
 })
