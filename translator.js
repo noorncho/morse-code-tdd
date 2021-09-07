@@ -114,6 +114,7 @@ export const morseOrEnglish = (userInput) =>{
     if(validInput(userInput)  && isMorse){
         return translateMorseToEnglish(userInput);
     }
+    
     if(validInput(userInput)  && !isMorse){
         return translateEnglishToMorse(userInput);
     }
