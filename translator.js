@@ -3,6 +3,7 @@
  */
 //Regex for letters
 const letters = /^[a-zA-Z ]+$/;
+const numbers = /^[0-9 ]+$/;
 //Regex for Morse Code
 const morseLetters = /^[.\-/ ]+$/;
 //Track if input is in morse code
@@ -114,7 +115,6 @@ export const morseOrEnglish = (userInput) =>{
     if(validInput(userInput)  && isMorse){
         return translateMorseToEnglish(userInput);
     }
-    
     if(validInput(userInput)  && !isMorse){
         return translateEnglishToMorse(userInput);
     }

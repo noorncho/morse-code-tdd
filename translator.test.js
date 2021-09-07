@@ -42,6 +42,7 @@ describe("Translate from English to Morse Code", () => {
     test("Translate single word English input to Morse Code", () => {
         expect(translator.translateEnglishToMorse("sos")).toBe(sosMorse);
         expect(translator.translateEnglishToMorse("noor")).toBe(nameMorse);
+        //expect(translator.translateEnglishToMorse(123)).toBe(".---- ..--- ...--")
     });
 
     test("Translate phrase in English to Morse Code", () => {
