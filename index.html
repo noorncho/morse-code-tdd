@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>Morse Code translator</title>
 </head>
 <body>
@@ -13,10 +15,12 @@
         <p><b>For Morse Code Input: </b> Only <b>"."</b>  and <b>"-"</b> are accepted. There should be a space between each letter and <b>"/"</b> between words. It should not contain any numbers or other symbols.</p>
         <p><b>For English Input:</b> The translator is case insensitive and it should not contain any numbers or symbols.</p>
         <br>
-        <h3>Input:</h3>
-        <textarea name="user-input" id="user-input" cols="30" rows="5"></textarea>
-        <button id="translate">Translate</button>
-        <div>
+        <div class="input">
+            <h3>Input:</h3>
+            <textarea name="user-input" id="user-input" cols="30" rows="5"></textarea>
+            <button id="translate">Translate</button>
+        </div>
+        <div class="output">
             <h3>Output:</h3>
             <p id="user-output" style="font-size: 1.5em;"></p>
         </div>

@@ -1,0 +1,8 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.input #translate {
+  align-items: center;
+  width: 50%;
+}
