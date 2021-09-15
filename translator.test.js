@@ -1,13 +1,13 @@
 /**
  * Test file
  */
-import * as translator from "./translator";
+import * as translator from "./translator.js";
 
 const sosMorse = "... --- ...";
 const nameMorse = "-. --- --- .-.";
 const helloWorldMorse = ".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
 
-xdescribe("User has entered a valid input", () =>{
+describe("User has entered a valid input", () =>{
     
     const str4 = "... --- ... / ... --- ..."
     const str2 = "@Noor&Jack*";
@@ -37,3 +37,15 @@ describe("Translate from Morse Code to English", () => {
         expect(translator.translateMorseToEnglish(helloWorldMorse)).toBe("hello world");
     });
 });
+
+describe("Translate from English to Morse Code", () => {
+    test("Translate single word English input to Morse Code", () => {
+        expect(translator.translateEnglishToMorse("sos")).toBe(sosMorse);
+        expect(translator.translateEnglishToMorse("noor")).toBe(nameMorse);
+        //expect(translator.translateEnglishToMorse(123)).toBe(".---- ..--- ...--")
+    });
+
+    test("Translate phrase in English to Morse Code", () => {
+        expect(translator.translateEnglishToMorse("hello world")).toBe(helloWorldMorse);
+    });
+})

@@ -3,6 +3,7 @@
  */
 //Regex for letters
 const letters = /^[a-zA-Z ]+$/;
+const numbers = /^[0-9 ]+$/;
 //Regex for Morse Code
 const morseLetters = /^[.\-/ ]+$/;
 //Track if input is in morse code
@@ -68,36 +69,54 @@ export const validInput = (userInput) =>{
     }
 }
 
-/*export const morseOrEnglish = (userInput) =>{
-    if(isMorse){
-        translateMorseToEnglish(userInput);
-    }else{
-        translateEnglishToMorse(userInput);
-    }
-}*/
-
 export const translateMorseToEnglish = (morseCode) =>{
     let englishTranslation = "";
-
+    
     if(validInput(morseCode)){
         const morseCodeArr = morseCode.split(" ");
-
+        
         for(const morse of morseCodeArr){
             if(morse == "/"){
                 englishTranslation += " ";
+                continue;
             }
             const englishLetter = Object.keys(morseCodeLetters).find(key => morseCodeLetters[key] === morse);
             englishTranslation += englishLetter;
         }
-
+        
     }else{
         return "Invalid Input unable to translate";
     }
     return englishTranslation;
 }
 
-export const translateEnglishToMorse = () =>{
+export const translateEnglishToMorse = (englishInput) =>{
+    let morseTranslation = "";
 
-    return "This feature is currently unavailable, be come back later";
+    if(validInput(englishInput)){
+        const englishArr = englishInput.toLowerCase().split("");
+        for(const letter of englishArr){
+            morseTranslation += " ";
+            if(letter == " "){
+                morseTranslation += "/";
+                continue;
+            }
+            const morseLetter = morseCodeLetters[letter];
+            morseTranslation += morseLetter;
+        }
+    }else{
+        return "Unable to translate."
+    }
+    return morseTranslation.substring(1);
 }
 
+export const morseOrEnglish = (userInput) =>{
+    
+    if(validInput(userInput)  && isMorse){
+        return translateMorseToEnglish(userInput);
+    }
+    if(validInput(userInput)  && !isMorse){
+        return translateEnglishToMorse(userInput);
+    }
+    return "Unable to Translate"
+}
