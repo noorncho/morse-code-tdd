@@ -3,8 +3,8 @@
  */
 import * as translator from "./translator.js";
 
-const outputField = document.getElementById("user-output");
-const inputField = document.getElementById("user-input");
+const outputField = document.getElementById("output__user");
+const inputField = document.getElementById("input__user");
 const translateButton = document.querySelector("#translate");
 
 translateButton.addEventListener("click", () => {
