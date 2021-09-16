@@ -55,7 +55,7 @@ const morseCodeNumbers = {
  * To ensure that users input is correct, always assuming the input is invalifd until proven otherwise
  * 
  * @param {String} userInput 
- * @returns 
+ * @returns {Boolean}
  */
 export const validInput = (userInput) =>{
     if(letters.test(userInput)){
@@ -69,6 +69,11 @@ export const validInput = (userInput) =>{
     }
 }
 
+/**
+ * 
+ * @param {String} morseCode 
+ * @returns {String} English Translation or error statement
+ */
 export const translateMorseToEnglish = (morseCode) =>{
     let englishTranslation = "";
     
@@ -90,6 +95,12 @@ export const translateMorseToEnglish = (morseCode) =>{
     return englishTranslation;
 }
 
+/**
+ * Handles translating English to Morse Code
+ * 
+ * @param {String} englishInput 
+ * @returns Morse code translation or error statement
+ */
 export const translateEnglishToMorse = (englishInput) =>{
     let morseTranslation = "";
 
@@ -110,6 +121,12 @@ export const translateEnglishToMorse = (englishInput) =>{
     return morseTranslation.substring(1);
 }
 
+/**
+ * Determines what type of input it is and wheather it is to be translated to english or morse code.
+ * 
+ * @param {String} userInput 
+ * @returns Translation to either morse code or english or error statement
+ */
 export const morseOrEnglish = (userInput) =>{
     
     if(validInput(userInput)  && isMorse){

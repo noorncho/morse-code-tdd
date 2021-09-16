@@ -1,10 +1,56 @@
+*{
+    box-sizing: border-box;
+}
 
-.input{
+.main-title{
+    text-align: center;
+}
+
+.instructions{
+    &__header{
+        margin-bottom: 0;
+    }
+    &__types{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    &__morse, &__english{
+        > h4{
+            margin-bottom: 0;
+        }
+        > p{
+            margin-top: 0;
+        }
+    }
+}
+
+.input, .output{
     display: flex;
     flex-direction: column;
+    
+}
 
-    #translate{
-        align-items: center;
-        width: 50%;
+#translate{
+    align-items: center;
+    width: auto;
+    border-radius: 16px;
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin: 30px;
+    }
+
+    .instructions{
+        &__types{
+            gap: 20px;
+        }
+    }
+
+    .translator{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }

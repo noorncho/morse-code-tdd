@@ -1,8 +1,49 @@
-.input {
+* {
+  box-sizing: border-box;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.instructions__header {
+  margin-bottom: 0;
+}
+.instructions__types {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+.instructions__morse > h4, .instructions__english > h4 {
+  margin-bottom: 0;
+}
+.instructions__morse > p, .instructions__english > p {
+  margin-top: 0;
+}
+
+.input, .output {
   display: flex;
   flex-direction: column;
 }
-.input #translate {
+
+#translate {
   align-items: center;
-  width: 50%;
+  width: auto;
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 30px;
+  }
+
+  .instructions__types {
+    gap: 20px;
+  }
+
+  .translator {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
