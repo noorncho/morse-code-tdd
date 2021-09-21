@@ -1,11 +1,16 @@
-# Morse Code Translator-tdd
+# Morse Code Translator
+A morse code translator that can translate English words and sentences to Morse Code and Morse Code to English.
 
-### Task
-You are tasked with build a translator.
+## General Info
+This was created to practice Test Driven Developement and using Unit Testing with jest in Javascript.
 
-Your app should consist of an input box and a button.
+The user is able to enter either English or Morse code words and senetences and the program translate it to the other. It is not able to handle an input that is a mix of English and morse Code.
 
-A user can type English letters and words into the input box, and when they click the button, the morse code translation is outputted onto the page below/next to the input box
+### Tech Stack
+- Javascript ES6
+- HTML5
+- CSS3/SASS
+- jest
 
----
-This is a fully tested Morse Code Translator following TDD using Jest and Babel for unit testing.
+### Roadmap / Todo
+- Add more test for translating numbers and special characters
