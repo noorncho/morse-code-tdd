@@ -2,15 +2,16 @@
  * Contains all function
  */
 //Regex for letters
-const letters = /^[a-zA-Z ]+$/;
-const numbers = /^[0-9 ]+$/;
+/*const letters = /^[a-zA-Z ]+$/;
+const numbers = /^[0-9 ]+$/;*/
+const inputCheck = /^[a-zA-Z0-9 ]+$/
 //Regex for Morse Code
 const morseLetters = /^[.\-/ ]+$/;
 //Track if input is in morse code
 let isMorse = false; 
 
 //Morse code objects for letters and numbers
-const morseCodeLetters = {
+/*const morseCodeLetters = {
     a: ".-",
     b: "-...",
     c: "-.-.",
@@ -49,6 +50,45 @@ const morseCodeNumbers = {
     8: "---..",
     9: "----.",
     0: "-----"
+}*/
+
+const morseCodeAlphabet = {
+    a: ".-",
+    b: "-...",
+    c: "-.-.",
+    d: "-..",
+    e: ".",
+    f: "..-.",
+    g: "--.",
+    h: "....",
+    i: "..",
+    j: ".---",
+    k: "-.-",
+    l: ".-..",
+    m: "--",
+    n: "-.",
+    o: "---",
+    p: ".--.",
+    q: "--.-",
+    r: ".-.",
+    s: "...",
+    t: "-",
+    u: "..-",
+    v: "...-",
+    w: ".--",
+    x: "-..-",
+    y: "-.--",
+    z: "--..",
+    1: ".----",
+    2: "..---", 
+    3: "...--",
+    4: "....-",
+    5: ".....",
+    6: "-....",
+    7: "--...",
+    8: "---..",
+    9: "----.",
+    0: "-----"
 }
 
 /**
@@ -58,7 +98,7 @@ const morseCodeNumbers = {
  * @returns {Boolean}
  */
 export const validInput = (userInput) =>{
-    if(letters.test(userInput)){
+    if(inputCheck.test(userInput)){//letters.test(userInput)){
         isMorse = false;
         return true;
     }else if(morseLetters.test(userInput)){
@@ -85,7 +125,7 @@ export const translateMorseToEnglish = (morseCode) =>{
                 englishTranslation += " ";
                 continue;
             }
-            const englishLetter = Object.keys(morseCodeLetters).find(key => morseCodeLetters[key] === morse);
+            const englishLetter = Object.keys(morseCodeAlphabet).find(key => morseCodeAlphabet[key] === morse);
             englishTranslation += englishLetter;
         }
         
@@ -112,7 +152,8 @@ export const translateEnglishToMorse = (englishInput) =>{
                 morseTranslation += "/";
                 continue;
             }
-            const morseLetter = morseCodeLetters[letter];
+            //const morseLetter = morseCodeLetters[letter];
+            const morseLetter = morseCodeAlphabet[letter];
             morseTranslation += morseLetter;
         }
     }else{
