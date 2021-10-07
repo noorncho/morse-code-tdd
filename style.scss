@@ -1,9 +1,19 @@
+@import "https://fonts.googleapis.com";
+@import "https://fonts.gstatic.com";
+@import "https://fonts.googleapis.com/css2?family=Special+Elite&display=swap";
+
 *{
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgba(62, 49, 170, 0.493);
+    font-size: 1.25rem;
+}
+
 .main-title{
     text-align: center;
+    font-family: 'Special Elite', cursive;
 }
 
 .instructions{
@@ -28,12 +38,16 @@
 .input, .output{
     display: flex;
     flex-direction: column;
-    
+}
+
+textarea{
+    font-size: 1.25rem;
 }
 
 #translate{
     align-items: center;
-    width: auto;
+    align-self: center;
+    width: 50%;
     border-radius: 16px;
 }
 
