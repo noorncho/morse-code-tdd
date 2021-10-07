@@ -1,3 +1,5 @@
+![Morse Code Translator](./morse-code-translator.png)
+
 # Morse Code Translator
 A morse code translator that can translate English words and sentences to Morse Code and Morse Code to English.
 
@@ -14,3 +16,4 @@ The user is able to enter either English or Morse code words and senetences and 
 
 ### Roadmap / Todo
 - Add more test for translating numbers and special characters
+- Add handling for special characters
